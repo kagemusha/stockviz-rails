@@ -9,5 +9,7 @@ class CreateAnalyses < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+
+    add_index(:analyses, [:user_profile_id, :topic], unique: true)
   end
 end
