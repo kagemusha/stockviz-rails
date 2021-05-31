@@ -19,7 +19,6 @@ class AuthorizationService
   def verify_token
     token = JsonWebToken.verify(http_token)
     auth0_id = token[0]['sub']
-    binding.pry
     return token
   end
 
