@@ -5,7 +5,7 @@ class AuthorizationService
   end
 
   def authenticate_request!
-    verify_token
+    return verify_token
   end
 
   private
@@ -18,7 +18,6 @@ class AuthorizationService
 
   def verify_token
     token = JsonWebToken.verify(http_token)
-    auth0_id = token[0]['sub']
     return token
   end
 
