@@ -1,5 +1,5 @@
 
-class UserProfileResource < JSONAPI::Resource
+class ProfileResource < JSONAPI::Resource
   attributes :screen_name, :categories, :analyses
 
   singleton singleton_key: -> (context) {
