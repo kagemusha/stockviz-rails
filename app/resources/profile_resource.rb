@@ -14,7 +14,7 @@ class ProfileResource < JSONAPI::Resource
   end
 
   def analyses
-    context[:current_user].analyses.pluck_to_hash(:id, :topic)
+    context[:current_user].analyses.pluck_to_hash(:id, :topic, :status)
   end
 
 end

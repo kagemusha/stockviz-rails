@@ -1,5 +1,5 @@
 class AnalysisResource < JSONAPI::Resource
-  attributes :topic, :body
+  attributes :topic, :status, :body
 
   def self.create(context)
     category = Category.find_by(name: 'stock')
