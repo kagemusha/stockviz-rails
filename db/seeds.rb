@@ -22,12 +22,10 @@ nmmGoodY = 140
 nmmPosX = 350
 nmmPosOffX = 200
 
-u1_nmm_body = {
+nmm_body = {
   symbol: 'NMM',
   name: 'Navios Maritime',
   theme: 'shipping',
-  ticker: '31.80+1.92 (+6.43%)',
-  price: 31.80,
   factors: [
     #good
     {id: 1, label: 'Buybacks', desc: '$13M buyback program', pos: {x: 160, y: 260}},
@@ -54,12 +52,10 @@ u1_nmm_body = {
   ]
 }
 
-u1_tsla_body = {
+tsla_body = {
   symbol: 'TSLA',
   name: 'Tesla',
   theme: 'auto',
-  price: 729.40,
-  ticker: '729.78+9.71 (+1.35%)',
   factors: [
     {id: 1, label: 'Battery Lead', desc: 'best battery factories', positivity: 6, pos: {x: 200, y: 150}},
     {id: 2, label: 'Innovation Culture', desc: 'Move faster than rivals', positivity: 8, pos: {x: 280, y: 290}},
@@ -82,5 +78,7 @@ u1_tsla_body = {
   ]
 }
 
-u1.analyses.create!(category: stock_cat, topic: 'nmm', body: u1_nmm_body)
-u1.analyses.create!(category: stock_cat, topic: 'tsla', body: u1_tsla_body)
+nmm_abody = AnalysisBody.create!(body: nmm_body)
+tsla_abody = AnalysisBody.create!(body: tsla_body)
+u1.analyses.create!(category: stock_cat, topic: 'nmm', analysis_body: nmm_abody)
+u1.analyses.create!(category: stock_cat, topic: 'tsla', analysis_body: tsla_abody)

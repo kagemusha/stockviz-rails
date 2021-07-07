@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_183542) do
+ActiveRecord::Schema.define(version: 2021_07_07_204320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,15 +19,22 @@ ActiveRecord::Schema.define(version: 2021_07_06_183542) do
     t.bigint "user_profile_id"
     t.bigint "group_id"
     t.bigint "category_id"
+    t.bigint "analysis_body_id"
     t.string "topic"
-    t.json "body"
+    t.string "status", default: "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status", default: "active"
+    t.index ["analysis_body_id"], name: "index_analyses_on_analysis_body_id"
     t.index ["category_id"], name: "index_analyses_on_category_id"
     t.index ["group_id"], name: "index_analyses_on_group_id"
     t.index ["user_profile_id", "topic"], name: "index_analyses_on_user_profile_id_and_topic", unique: true
     t.index ["user_profile_id"], name: "index_analyses_on_user_profile_id"
+  end
+
+  create_table "analysis_bodies", force: :cascade do |t|
+    t.json "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|

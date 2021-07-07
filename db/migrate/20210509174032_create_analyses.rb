@@ -4,8 +4,9 @@ class CreateAnalyses < ActiveRecord::Migration[6.1]
       t.references :user_profile
       t.references :group
       t.references :category
+      t.references :analysis_body
       t.string :topic
-      t.json :body
+      t.string :status, :default => 'active'
 
       t.timestamps
     end

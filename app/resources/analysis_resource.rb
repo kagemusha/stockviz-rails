@@ -1,9 +1,13 @@
 class AnalysisResource < JSONAPI::Resource
-  attributes :topic, :status, :body
+  has_one :analysis_body
+  has_one :category
+
+  attributes :topic, :status
 
   def self.create(context)
     category = Category.find_by(name: 'stock')
-    anly = AnalysisResource.new(context[:current_user].analyses.new(category: category), nil)
+    abody = AnalysisBody.create({})
+    anly = AnalysisResource.new(context[:current_user].analyses.new(category: category, body: abody), nil)
   end
 
   def self.records(options = {})
