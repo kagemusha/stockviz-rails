@@ -2,7 +2,7 @@ class Analysis < ApplicationRecord
   belongs_to :user_profile
   belongs_to :category
   belongs_to :group, optional: true
-  belongs_to :analysis_body
+  has_many :factors, dependent: :destroy
 
   validates :topic, uniqueness: true
 end

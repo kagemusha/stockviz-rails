@@ -1,0 +1,2 @@
+class ProfilesController < SecuredController
+end

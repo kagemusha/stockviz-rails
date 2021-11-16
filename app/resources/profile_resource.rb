@@ -1,6 +1,7 @@
 
 class ProfileResource < JSONAPI::Resource
-  attributes :screen_name, :categories, :analyses
+  has_many :analyses
+  attributes :screen_name, :categories
 
   singleton singleton_key: -> (context) {
     key = context[:current_user].id
@@ -11,10 +12,6 @@ class ProfileResource < JSONAPI::Resource
   def categories
     #eventually include user-defined categories
     Category.pluck_to_hash(:id, :name)
-  end
-
-  def analyses
-    context[:current_user].analyses.pluck_to_hash(:id, :topic, :status)
   end
 
 end
