@@ -30,19 +30,19 @@ nmm = {
 
 nmm_factors = [
     #good
-    {id: 1, label: 'Buybacks', desc: '$13M buyback program', x: 160, y: 260},
-    {id: 2, label: 'P/E', desc: '2.3', x: nmmPosX, y: nmmGoodY},
-    {id: 3, label: 'Supply/Demand Imbalance', desc: 'big demand/supply mismatch', x: nmmPosX+nmmPosOffX , y: nmmGoodY, positivity: 9},
-    {id: 4, label: 'Rising Rates Link', x: nmmPosX+nmmPosOffX*3, y: nmmGoodY, positivity: 9},
+    {label: 'Buybacks', desc: '$13M buyback program', x: 160, y: 260},
+    {label: 'P/E', desc: '2.3', x: nmmPosX, y: nmmGoodY},
+    {label: 'Supply/Demand Imbalance', desc: 'big demand/supply mismatch', x: nmmPosX+nmmPosOffX , y: nmmGoodY, positivity: 9},
+    {label: 'Rising Rates Link', x: nmmPosX+nmmPosOffX*3, y: nmmGoodY, positivity: 9},
     #rising rates should be linked to something
-    {id: 5, label: 'Moat till 2023', desc: 'newbuilds take time', x: nmmPosX+nmmPosOffX*2, y: nmmGoodY, positivity: 9},
+    {label: 'Moat till 2023', desc: 'newbuilds take time', x: nmmPosX+nmmPosOffX*2, y: nmmGoodY, positivity: 9},
     #bad
-    {id: 6, label: 'Governance', desc: 'GP structure favors expansion over shareholders', x: 450, y: nmmMineY, positivity: -8},
-    {id: 7, label: 'NNA', desc: 'Will they bail out NNA?', x: 800, y: nmmMineY, positivity: -8},
+    {label: 'Governance', desc: 'GP structure favors expansion over shareholders', x: 450, y: nmmMineY, positivity: -8},
+    {label: 'NNA', desc: 'Will they bail out NNA?', x: 800, y: nmmMineY, positivity: -8},
     #swans
-    {id: 8, label: 'Trade War', ftype: 'bswan', desc: 'US-China Trade War', x: swanX, y: 210},
-    {id: 10, label: 'Fraud', ftype: 'bswan', desc: 'remember DRYS', x: swanX, y: 270},
-    {id: 9, label: 'Takeover', ftype: 'wswan', desc: 'M&A picking up', x: swanX, y: 330},
+    {label: 'Trade War', ftype: 'bswan', desc: 'US-China Trade War', x: swanX, y: 210},
+    {label: 'Fraud', ftype: 'bswan', desc: 'remember DRYS', x: swanX, y: 270},
+    {label: 'Takeover', ftype: 'wswan', desc: 'M&A picking up', x: swanX, y: 330},
   ]
 
   nmm_events = [
@@ -62,15 +62,15 @@ tsla = {
 }
 
 tsla_factors = [
-    {id: 1, label: 'Battery Lead', desc: 'best battery factories', positivity: 6, x: 200, y: 150},
-    {id: 2, label: 'Innovation Culture', desc: 'Move faster than rivals', positivity: 8, x: 280, y: 290},
+    {label: 'Battery Lead', desc: 'best battery factories', positivity: 6, x: 200, y: 150},
+    {label: 'Innovation Culture', desc: 'Move faster than rivals', positivity: 8, x: 280, y: 290},
     #bad
-    {id: 3, label: 'Competition', desc: 'China, VW, Big 3 all ramping up EVs', positivity: -5, x: 1200, y: 550},
-    {id: 4, label: 'Valuation', desc: "PE > 1000!", positivity: -5, x: 980, y: 630},
+    {label: 'Competition', desc: 'China, VW, Big 3 all ramping up EVs', positivity: -5, x: 1200, y: 550},
+    {label: 'Valuation', desc: "PE > 1000!", positivity: -5, x: 980, y: 630},
     #swans
-    {id: 8, label: 'Elon dies', desc: "Musk's vision drives Tesla", ftype: 'bswan', x: swanX, y: 210},
-    {id: 10, label: 'Elon tweets', ftype: 'bswan', desc: 'SEC could get fed up with Musk tweets', x: swanX, y: 270},
-    {id: 9, label: 'Bitcoin > $1M', ftype: 'wswan', desc: 'Musk bets on bitcoin', x: swanX, y: 330},
+    {label: 'Elon dies', desc: "Musk's vision drives Tesla", ftype: 'bswan', x: swanX, y: 210},
+    {label: 'Elon tweets', ftype: 'bswan', desc: 'SEC could get fed up with Musk tweets', x: swanX, y: 270},
+    {label: 'Bitcoin > $1M', ftype: 'wswan', desc: 'Musk bets on bitcoin', x: swanX, y: 330},
 ]
 
 tsla_events = [
