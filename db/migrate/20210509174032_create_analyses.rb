@@ -1,7 +1,7 @@
 class CreateAnalyses < ActiveRecord::Migration[6.1]
   def change
     create_table :analyses do |t|
-      t.references :user_profile
+      t.references :profile
       t.references :group
       t.references :category
       t.string :topic
@@ -10,6 +10,6 @@ class CreateAnalyses < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index(:analyses, [:user_profile_id, :topic], unique: true)
+    add_index(:analyses, [:profile_id, :topic], unique: true)
   end
 end

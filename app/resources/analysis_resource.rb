@@ -1,11 +1,20 @@
 class AnalysisResource < JSONAPI::Resource
+  has_one :profile
   has_one :category
   has_many :factors
 
   attributes :topic, :status
 
-  def self.create(context)
-    category = Category.find_by(name: 'stock')
+  before_create :set_user_profile
+
+  def set_user_profile
+    byebug
+    @model.profile = context[:current_user] 
+    @model.category = Category.find_by(name: 'stock')
+  end
+
+  def category=(name='stock')    
+    @model.category = Category.find_by(name: name)
   end
 
   def self.records(options = {})

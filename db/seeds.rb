@@ -14,7 +14,7 @@ misc_cat = Category.find_or_create_by(name: 'misc')
 #user_id, name
 #unique for user_id,name
 
-u1 = UserProfile.find_or_create_by(auth0_id: 'auth0|60984aeab743a9006a0a2bbe', screen_name: 'TestUser1')
+u1 = Profile.find_or_create_by(auth0_id: 'auth0|60984aeab743a9006a0a2bbe', screen_name: 'TestUser1')
 
 swanX = 20
 nmmMineY = 650

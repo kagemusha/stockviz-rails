@@ -12,7 +12,7 @@ class SecuredController < ApplicationController
     token = AuthorizationService.new(request.headers).authenticate_request!
     if token
       auth0_id = token[0]['sub']
-      @current_user = UserProfile.find_or_create_by(auth0_id: auth0_id)
+      @current_user = Profile.find_or_create_by(auth0_id: auth0_id)
     end
   rescue JWT::VerificationError, JWT::DecodeError
     render json: { errors: ['Not Authenticated'] }, status: :unauthorized

@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_profile: 
+  profile: 
   group: 
   category: 
   topic: MyString
   body: 
 
 two:
-  user_profile: 
+  profile: 
   group: 
   category: 
   topic: MyString
