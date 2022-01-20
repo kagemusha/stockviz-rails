@@ -8,7 +8,6 @@ class AnalysisResource < JSONAPI::Resource
   before_create :set_user_profile
 
   def set_user_profile
-    byebug
     @model.profile = context[:current_user] 
     @model.category = Category.find_by(name: 'stock')
   end
