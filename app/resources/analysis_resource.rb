@@ -2,6 +2,7 @@ class AnalysisResource < JSONAPI::Resource
   has_one :profile
   has_one :category
   has_many :factors
+  has_many :events
 
   attributes :topic, :status
 

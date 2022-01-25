@@ -46,9 +46,9 @@ nmm_factors = [
   ]
 
   nmm_events = [
-    {label: '2q 2021 Earnings', date: '5/14/2021', x: 30, y: 250, mag:'major'},
-    {label: 'Argos Recharter', date: '5/24/2021', x: 70, y: 370},
-    {label: 'Shipping Conference', date: '6/24/2021', x: 90, y: 490}
+    {label: '2q 2021 Earnings', edate: '5/14/2021', x: 30, y: 250, magnitude:'major'},
+    {label: 'Argos Recharter', edate: '5/24/2021', x: 70, y: 370},
+    {label: 'Shipping Conference', edate: '6/24/2021', x: 90, y: 490}
   ]
 
   nmm_price_points = [
@@ -74,8 +74,8 @@ tsla_factors = [
 ]
 
 tsla_events = [
-    {label: '2q 2021 Earnings', date: '5/14/2021', x: 30, y: 250, mag:'major'},
-    {label: 'Battery Day', date: '5/24/2021', x: 70, y: 380}
+    {label: '2q 2021 Earnings', edate: '5/14/2021', x: 30, y: 250, magnitude: 2},
+    {label: 'Battery Day', edate: '5/24/2021', x: 70, y: 380}
 ]
 
 tsla_price_points = [
@@ -88,8 +88,15 @@ nmm_analysis = u1.analyses.find_or_create_by(category: stock_cat, topic: 'nmm')
 nmm_factors.each do |f|
   nmm_analysis.factors.create(f)
 end
+nmm_events.each do |ev|
+  nmm_analysis.events.create(ev)
+end
+
 
 tsla_analysis = u1.analyses.find_or_create_by(category: stock_cat, topic: 'tsla')
 tsla_factors.each do |f|
   tsla_analysis.factors.create(f)
+end
+tsla_events.each do |ev|
+  tsla_analysis.events.create(ev)
 end

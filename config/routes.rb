@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   jsonapi_resources :analyses
   jsonapi_resources :factors
+  jsonapi_resources :events
   jsonapi_resource :profile
   jsonapi_resource :profiles
 
