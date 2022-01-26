@@ -39,12 +39,10 @@ ActiveRecord::Schema.define(version: 2022_01_25_125515) do
   create_table "events", force: :cascade do |t|
     t.bigint "analysis_id"
     t.string "etype"
-    t.string "label"
+    t.string "label", null: false
     t.string "desc"
-    t.integer "magnitude", default: 5
-    t.integer "x"
-    t.integer "y"
-    t.date "edate"
+    t.integer "magnitude", default: 3
+    t.date "edate", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["analysis_id"], name: "index_events_on_analysis_id"

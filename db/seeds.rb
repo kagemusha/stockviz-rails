@@ -46,9 +46,9 @@ nmm_factors = [
   ]
 
   nmm_events = [
-    {label: '2q 2021 Earnings', edate: '5/14/2021', x: 30, y: 250, magnitude:'major'},
-    {label: 'Argos Recharter', edate: '5/24/2021', x: 70, y: 370},
-    {label: 'Shipping Conference', edate: '6/24/2021', x: 90, y: 490}
+    {label: '2q 2021 Earnings', edate: 3.weeks.from_now, magnitude: 3},
+    {label: 'Argos Recharter', edate: 3.months.from_now, magnitude: 2},
+    {label: 'Shipping Conference', edate: 2.months.from_now, magnitude: 1},
   ]
 
   nmm_price_points = [
@@ -74,14 +74,14 @@ tsla_factors = [
 ]
 
 tsla_events = [
-    {label: '2q 2021 Earnings', edate: '5/14/2021', x: 30, y: 250, magnitude: 2},
-    {label: 'Battery Day', edate: '5/24/2021', x: 70, y: 380}
+    {label: '2q 2021 Earnings', edate: 2.weeks.from_now, magnitude: 2},
+    {label: 'Battery Day', edate: 5.months.from_now, magnitude: 2},
 ]
 
 tsla_price_points = [
-    {label: 'secondary', date: '2/14/2020', price: 160.01, x: 300, y: 150},
-    {label: '5:1 split', date: '8/31/2020', price: 442.68, x: 500, y: 250},
-    {label: 'All-time high', date: '1/25/2021', price: 900.40, x: 700, y: 150}
+    {label: 'secondary', date: '2/14/2020', price: 160.01},
+    {label: '5:1 split', date: '8/31/2020', price: 442.68},
+    {label: 'All-time high', date: '1/25/2021', price: 900.40},
 ]
 
 nmm_analysis = u1.analyses.find_or_create_by(category: stock_cat, topic: 'nmm')

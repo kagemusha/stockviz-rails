@@ -3,12 +3,10 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     create_table :events do |t|
       t.references :analysis 
       t.string :etype
-      t.string :label
+      t.string :label, :null=>false
       t.string :desc
-      t.integer :magnitude, :default=>5
-      t.integer :x
-      t.integer :y
-      t.date :edate
+      t.integer :magnitude, :default=>3
+      t.date :edate, :null=>false
       t.timestamps
     end
   end
