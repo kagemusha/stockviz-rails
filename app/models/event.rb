@@ -4,5 +4,4 @@ class Event < ApplicationRecord
   validates :edate, presence: true
   validates :magnitude, presence: true
   validates :magnitude, :inclusion => 1..3
-  
 end
