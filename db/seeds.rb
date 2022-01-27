@@ -14,7 +14,7 @@ misc_cat = Category.find_or_create_by(name: 'misc')
 #user_id, name
 #unique for user_id,name
 
-u1 = Profile.find_or_create_by(auth0_id: 'auth0|60984aeab743a9006a0a2bbe', screen_name: 'TestUser1')
+user1 = Profile.find_or_create_by(auth0_id: 'auth0|60984aeab743a9006a0a2bbe', screen_name: 'TestUser1')
 
 swanX = 20
 nmmMineY = 650
@@ -26,9 +26,8 @@ nmm = {
   symbol: 'NMM',
   name: 'Navios Maritime',
   theme: 'shipping',
-}
-
-nmm_factors = [
+  category: stock_cat,
+  factors: [
     #good
     {label: 'Buybacks', desc: '$13M buyback program', x: 160, y: 260},
     {label: 'P/E', desc: '2.3', x: nmmPosX, y: nmmGoodY},
@@ -43,25 +42,23 @@ nmm_factors = [
     {label: 'Trade War', ftype: 'bswan', desc: 'US-China Trade War', x: swanX, y: 210},
     {label: 'Fraud', ftype: 'bswan', desc: 'remember DRYS', x: swanX, y: 270},
     {label: 'Takeover', ftype: 'wswan', desc: 'M&A picking up', x: swanX, y: 330},
-  ]
-
-  nmm_events = [
+  ],
+  events: [
     {label: '2q 2021 Earnings', edate: 3.weeks.from_now, magnitude: 3},
     {label: 'Argos Recharter', edate: 3.months.from_now, magnitude: 2},
     {label: 'Shipping Conference', edate: 2.months.from_now, magnitude: 1},
+  ],
+  price_points: [
+    {label: 'buyback', date: '11/29/2021', price: 2.1}
   ]
-
-  nmm_price_points = [
-    {label: 'buyback', date: '11/29/2021', price: 2.1, x: 530, y: 250}
-  ]
+}
 
 tsla = {
   symbol: 'TSLA',
   name: 'Tesla',
   theme: 'auto',
-}
-
-tsla_factors = [
+  category: stock_cat,
+  factors: [
     {label: 'Battery Lead', desc: 'best battery factories', positivity: 6, x: 200, y: 150},
     {label: 'Innovation Culture', desc: 'Move faster than rivals', positivity: 8, x: 280, y: 290},
     #bad
@@ -71,32 +68,29 @@ tsla_factors = [
     {label: 'Elon dies', desc: "Musk's vision drives Tesla", ftype: 'bswan', x: swanX, y: 210},
     {label: 'Elon tweets', ftype: 'bswan', desc: 'SEC could get fed up with Musk tweets', x: swanX, y: 270},
     {label: 'Bitcoin > $1M', ftype: 'wswan', desc: 'Musk bets on bitcoin', x: swanX, y: 330},
-]
-
-tsla_events = [
+  ],
+  events: [
     {label: '2q 2021 Earnings', edate: 2.weeks.from_now, magnitude: 2},
     {label: 'Battery Day', edate: 5.months.from_now, magnitude: 2},
-]
-
-tsla_price_points = [
+  ],
+  price_points: [
     {label: 'secondary', date: '2/14/2020', price: 160.01},
     {label: '5:1 split', date: '8/31/2020', price: 442.68},
     {label: 'All-time high', date: '1/25/2021', price: 900.40},
 ]
+}
 
-nmm_analysis = u1.analyses.find_or_create_by(category: stock_cat, topic: 'nmm')
-nmm_factors.each do |f|
-  nmm_analysis.factors.create(f)
-end
-nmm_events.each do |ev|
-  nmm_analysis.events.create(ev)
+stocks = [nmm, tsla]
+stocks.each do |stock|
+  analysis = user1.analyses.find_or_create_by(category: stock[:category], topic: stock[:symbol])
+  stock[:factors].each do |f|
+    analysis.factors.create(f)
+  end
+  stock[:events].each do |ev|
+    analysis.events.create(ev)
+  end
+  stock[:price_points].each do |pp|
+    analysis.price_points.create(pp)
+  end
 end
 
-
-tsla_analysis = u1.analyses.find_or_create_by(category: stock_cat, topic: 'tsla')
-tsla_factors.each do |f|
-  tsla_analysis.factors.create(f)
-end
-tsla_events.each do |ev|
-  tsla_analysis.events.create(ev)
-end
