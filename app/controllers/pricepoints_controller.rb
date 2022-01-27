@@ -1,0 +1,2 @@
+class PricepointsController < SecuredController
+end

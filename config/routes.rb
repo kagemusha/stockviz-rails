@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   jsonapi_resources :analyses
   jsonapi_resources :factors
   jsonapi_resources :events
+  jsonapi_resources :pricepoints
   jsonapi_resource :profile
   jsonapi_resource :profiles
 

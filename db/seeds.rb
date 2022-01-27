@@ -48,8 +48,8 @@ nmm = {
     {label: 'Argos Recharter', edate: 3.months.from_now, magnitude: 2},
     {label: 'Shipping Conference', edate: 2.months.from_now, magnitude: 1},
   ],
-  price_points: [
-    {label: 'buyback', date: '11/29/2021', price: 2.1}
+  pricepoints: [
+    {label: 'buyback', date: 2.months.ago, price: 2.1}
   ]
 }
 
@@ -73,10 +73,10 @@ tsla = {
     {label: '2q 2021 Earnings', edate: 2.weeks.from_now, magnitude: 2},
     {label: 'Battery Day', edate: 5.months.from_now, magnitude: 2},
   ],
-  price_points: [
-    {label: 'secondary', date: '2/14/2020', price: 160.01},
-    {label: '5:1 split', date: '8/31/2020', price: 442.68},
-    {label: 'All-time high', date: '1/25/2021', price: 900.40},
+  pricepoints: [
+    {label: 'secondary', date: 1.months.ago, price: 160.01},
+    {label: '5:1 split', date: 2.months.ago, price: 442.68},
+    {label: 'All-time high', date: 3.months.ago, price: 900.40},
 ]
 }
 
@@ -89,8 +89,8 @@ stocks.each do |stock|
   stock[:events].each do |ev|
     analysis.events.create(ev)
   end
-  stock[:price_points].each do |pp|
-    analysis.price_points.create(pp)
+  stock[:pricepoints].each do |pp|
+    analysis.pricepoints.create(pp)
   end
 end
 

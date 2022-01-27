@@ -3,6 +3,7 @@ class AnalysisResource < JSONAPI::Resource
   has_one :category
   has_many :factors
   has_many :events
+  has_many :pricepoints
 
   attributes :topic, :status
 
