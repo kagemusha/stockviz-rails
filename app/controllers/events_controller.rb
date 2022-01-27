@@ -1,2 +1,3 @@
-class EventsController < ApplicationController
+class EventsController < SecuredController
+
 end

@@ -1,2 +1,3 @@
-class FactorsController < ApplicationController
+class FactorsController < SecuredController
+
 end
