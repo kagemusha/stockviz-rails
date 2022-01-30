@@ -49,7 +49,9 @@ nmm = {
     {label: 'Shipping Conference', edate: 2.months.from_now, magnitude: 1},
   ],
   pricepoints: [
-    {label: 'buyback', date: 2.months.ago, price: 2.1}
+    {label: 'upturn', date: 3.months.ago, price: 34},
+    {label: 'buyback', date: 2.months.ago, price: 52},
+    {label: 'support', date: 1.months.ago, price: 55},
   ]
 }
 
