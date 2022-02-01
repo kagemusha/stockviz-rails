@@ -1,0 +1,9 @@
+development:
+  algorithms: 'RS256'
+  iss: 'https://dev-ig6m206n.us.auth0.com/'
+  jwk_uri: 'https://dev-ig6m206n.us.auth0.com/.well-known/jwks.json'
+
+production:
+  algorithms: 'RS256'
+  iss: 'https://dev-3yxg-w27.us.auth0.com/'
+  jwk_uri: 'https://dev-3yxg-w27.us.auth0.com/.well-known/jwks.json'
