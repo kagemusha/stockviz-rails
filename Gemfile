@@ -46,3 +46,5 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'jsonapi-resources'
 
 gem 'pluck_to_hash'
+
+gem 'basic_yahoo_finance'
